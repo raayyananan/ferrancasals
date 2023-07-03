@@ -28,7 +28,7 @@ html, body {
   translate: 0 100%;
 }
 .section1 .column-text-outer .column-text-inner h1 {
-  font-size: 100px;
+  font-size: 30px;
   margin: 0;
 }
 .section1 h1 {
@@ -260,6 +260,11 @@ p, h1, h2, h3, h4, h5, h6 {
   height: 100%;
   padding: 56px;
 }
+@media (max-width: 640px) {
+  .sliding-banner {
+    padding: 35px;
+  }
+}
 .sliding-banner .card-header__title {
   font-size: clamp(2rem, 1rem + 5vw, 5rem);
   line-height: clamp(2rem, 1rem + 5vw, 5rem);
@@ -280,6 +285,12 @@ p, h1, h2, h3, h4, h5, h6 {
   font-size: clamp(2.40431rem, 1.4859rem + 4.0816vw, 5.40431rem);
   line-height: clamp(4.74769rem, 3.8293rem + 4.0816vw, 7.74769rem);
   text-align: left;
+}
+@media (max-width: 640px) {
+  .sliding-banner .step-header__number {
+    font-size: clamp(1.40431rem, 1.4859rem + 2.0816vw, 2.70431rem);
+    line-height: clamp(4.74769rem, 3.8293rem + 4.0816vw, 7.74769rem);
+  }
 }
 .sliding-banner .card-footer__title {
   font-size: clamp(1.125rem, 0.7917rem + 1.6667vw, 2.125rem);
@@ -303,6 +314,13 @@ p, h1, h2, h3, h4, h5, h6 {
   font-size: calc(var(--clamped-font-size) * 1);
   height: calc(var(--clamped-height) * 1);
   padding: 0 40px;
+}
+@media (max-width: 640px) {
+  .sliding-banner .button--1 {
+    height: 65px !important;
+    width: 100%;
+    font-size: 1.25rem !important;
+  }
 }
 .sliding-banner .button {
   --clamped-font-size: clamp(0.5rem,0.1667rem + 1.6667vw,1.5rem);
@@ -347,6 +365,12 @@ p, h1, h2, h3, h4, h5, h6 {
   bottom: 0;
   left: 0;
   opacity: 0;
+  min-width: 40vw;
+}
+@media (max-width: 640px) {
+  .sliding-banner .slider-text-container .slider-text {
+    bottom: 65px;
+  }
 }
 .sliding-banner .registrate {
   display: flex;

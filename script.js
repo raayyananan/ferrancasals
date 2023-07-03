@@ -106,7 +106,8 @@ stl.to('.progress-bar-active', {
 
 const slidingBannerNumbers = gsap.utils.toArray('.sliding-banner .step-header__number'),
 slidingBannerNumbersLength = slidingBannerNumbers.length,
-slidingBannerText = gsap.utils.toArray('.sliding-banner .slider-text');
+slidingBannerText = gsap.utils.toArray('.sliding-banner .slider-text'),
+slidingBannerNumberContainers = gsap.utils.toArray('.sliding-banner .number-container');
 
 const btl = gsap.timeline({
     scrollTrigger: {
@@ -129,10 +130,15 @@ const btl = gsap.timeline({
                 if (index === activeIndex) {
                     gsap.to(number, { fontWeight: 'bold', duration: 0.2 });
                     gsap.to(slidingBannerText[index], { opacity: 1, duration: 0.2 });
+
+                    // if (window.innerWidth < 640) {
+                    //     gsap.to('.number-bar-container', {
+                    //         x: Math.max(0, 100 / index)
+                    //     })
+                    // }
                 } else {
                     gsap.to(number, { fontWeight: 'normal', duration: 0.2 });
                     gsap.to(slidingBannerText[index], { opacity: 0, duration: 0.2 });
-
                 }
             });
         },
