@@ -1,0 +1,259 @@
+:root {
+  font-size: 14px;
+  --small-breakpoint: 640px;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "Space Grotesk", sans-serif;
+  background: rgb(240, 240, 240);
+}
+
+.section1 {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column nowrap;
+}
+.section1 .column-text-outer {
+  overflow: hidden;
+}
+.section1 .column-text-outer .column-text-inner {
+  translate: 0 100%;
+}
+.section1 .column-text-outer .column-text-inner h1 {
+  font-size: 100px;
+  margin: 0;
+}
+.section1 h1 {
+  font-size: 72px;
+  margin: 20px 0;
+  text-transform: uppercase;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+.section2 {
+  height: 120%;
+  background: rgb(240, 210, 220);
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+.section2 p {
+  text-transform: uppcase;
+  margin: 10px 0;
+}
+.section2 p:nth-child(2) {
+  margin-bottom: 20px;
+}
+.section2 button {
+  all: unset;
+  background-color: black;
+  padding: 16px 24px;
+  color: white;
+  border-radius: 16px;
+}
+
+.panel-container {
+  position: relative;
+  background: rgba(0, 0, 0, 0.4);
+}
+.panel-container .inner-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  padding: 56px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  color: white;
+  display: flex;
+  flex-flow: column nowrap;
+}
+@media screen and (max-width: 640px) {
+  .panel-container .inner-panel {
+    padding: 35px;
+  }
+}
+.panel-container .inner-panel .heading {
+  max-width: 70%;
+}
+.panel-container .inner-panel .heading h1 {
+  font-size: 7.1875rem;
+}
+.panel-container .inner-panel .heading h2 {
+  translate: 2px;
+  font-size: 1.5rem;
+}
+@media screen and (max-width: 640px) {
+  .panel-container .inner-panel .heading h1 {
+    font-size: 2.6875rem;
+  }
+  .panel-container .inner-panel .heading h2 {
+    font-size: 0.875rem;
+  }
+}
+.panel-container .inner-panel .card-container {
+  flex: auto;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding-top: 1.5rem;
+}
+@media screen and (max-width: 640px) {
+  .panel-container .inner-panel .card-container {
+    flex-flow: column nowrap;
+    padding-top: 0;
+  }
+  .panel-container .inner-panel .card-container .left {
+    align-items: center;
+  }
+  .panel-container .inner-panel .card-container .left .progress-container {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .panel-container .inner-panel .card-container .left .progress-container .progress-bar-wrapper {
+    margin: 20px 0;
+  }
+  .panel-container .inner-panel .card-container div.right {
+    width: 100%;
+  }
+  .panel-container .inner-panel .card-container div.right .text-container {
+    padding: 0;
+  }
+  .panel-container .inner-panel .card-container div.right .text-container .subheading {
+    font-size: 0.875rem;
+  }
+  .panel-container .inner-panel .card-container div.right .text-container .title {
+    font-size: 2.25rem;
+  }
+  .panel-container .inner-panel .card-container div.right .text-container .text {
+    font-size: 1.125rem;
+  }
+  .panel-container .inner-panel .card-container div.right .text-container ul li {
+    font-size: 0.875rem;
+  }
+}
+.panel-container .inner-panel .card-container .left {
+  flex: 32.5%;
+  display: flex;
+  align-items: flex-start;
+}
+.panel-container .inner-panel .card-container .left .progress-container {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  height: 100%;
+}
+.panel-container .inner-panel .card-container .left .progress-container .number-wrapper {
+  overflow: hidden;
+  height: 235px;
+}
+.panel-container .inner-panel .card-container .left .progress-container .number-wrapper .number {
+  font-size: 11.2rem;
+  margin: 0;
+  padding: 0;
+}
+.panel-container .inner-panel .card-container .left .progress-container .progress-bar-wrapper {
+  position: relative;
+  flex: auto;
+}
+.panel-container .inner-panel .card-container .left .progress-container .progress-bar-wrapper .progress-bar, .panel-container .inner-panel .card-container .left .progress-container .progress-bar-wrapper .progress-bar-active {
+  width: 5px;
+  height: 100%;
+  position: absolute;
+  left: calc(50% - 2px);
+  top: 0;
+}
+.panel-container .inner-panel .card-container .left .progress-container .progress-bar-wrapper .progress-bar {
+  background: rgb(100, 100, 100);
+}
+.panel-container .inner-panel .card-container .left .progress-container .progress-bar-wrapper .progress-bar-active {
+  background: white;
+  height: 0%;
+}
+.panel-container .inner-panel .card-container .right {
+  flex: 67.5%;
+  box-sizing: border-box;
+  position: relative;
+}
+.panel-container .inner-panel .card-container .right .text-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.2s;
+  font-size: 18px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  height: 100%;
+  box-sizing: border-box;
+  padding-top: 1rem;
+}
+.panel-container .inner-panel .card-container .right .text-container .subheading {
+  font-weight: 300;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+.panel-container .inner-panel .card-container .right .text-container .title {
+  font-size: 4rem;
+  font-weight: 500;
+  margin: 0;
+}
+.panel-container .inner-panel .card-container .right .text-container .text {
+  font-size: 1.5rem;
+}
+.panel-container .inner-panel .card-container .right .text-container ul {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+}
+.panel-container .inner-panel .card-container .right .text-container ul li {
+  font-size: 1.875rem;
+}
+@media screen and (max-width: 970px) {
+  .panel-container .inner-panel .card-container .left .progress-container .number-wrapper {
+    height: 98px;
+  }
+  .panel-container .inner-panel .card-container .left .progress-container .number-wrapper .number {
+    font-size: 72px;
+  }
+  .panel-container .inner-panel .card-container .right .text-container {
+    padding: 20px;
+  }
+}
+.panel-container section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.panel-container section .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/*# sourceMappingURL=styles.css.map */
