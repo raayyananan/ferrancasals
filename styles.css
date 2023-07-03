@@ -1,6 +1,7 @@
 :root {
   font-size: 14px;
   --small-breakpoint: 640px;
+  overflow-x: hidden;
 }
 
 html, body {
@@ -252,8 +253,117 @@ p, h1, h2, h3, h4, h5, h6 {
   height: 100%;
   z-index: -1;
   background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
+}
+
+.sliding-banner {
+  height: 100%;
+  padding: 56px;
+}
+.sliding-banner .card-header__title {
+  font-size: clamp(2rem, 1rem + 5vw, 5rem);
+  line-height: clamp(2rem, 1rem + 5vw, 5rem);
+  width: clamp(14rem, 5vw, 30rem);
+  text-align: left;
+}
+.sliding-banner .card-header__subtitle {
+  font-size: clamp(0.75rem, 0.5rem + 1.25vw, 1.5rem);
+  line-height: clamp(1.125rem, 1rem + 0.625vw, 1.5rem);
+  width: clamp(20rem, 13.8776rem + 27.2109vw, 40rem);
+  text-align: left;
+  font-weight: 300;
+}
+.sliding-banner .font-light {
+  font-weight: 300;
+}
+.sliding-banner .step-header__number {
+  font-size: clamp(2.40431rem, 1.4859rem + 4.0816vw, 5.40431rem);
+  line-height: clamp(4.74769rem, 3.8293rem + 4.0816vw, 7.74769rem);
+  text-align: left;
+}
+.sliding-banner .card-footer__title {
+  font-size: clamp(1.125rem, 0.7917rem + 1.6667vw, 2.125rem);
+  line-height: clamp(2.1875rem, 1.1875rem + 5vw, 5.1875rem);
+  text-align: left;
+  font-weight: 500;
+}
+.sliding-banner .card-footer-description {
+  font-size: clamp(0.75rem, 0.5rem + 1.25vw, 1.5rem);
+  line-height: clamp(1.125rem, 1rem + 0.625vw, 1.5rem);
+  width: auto;
+  text-align: left;
+  font-weight: 300;
+}
+@media (min-width: 1280px) {
+  .sliding-banner .card-footer-description {
+    width: clamp(21rem, 14.5714rem + 28.5714vw, 42rem);
+  }
+}
+.sliding-banner .button--1 {
+  font-size: calc(var(--clamped-font-size) * 1);
+  height: calc(var(--clamped-height) * 1);
+  padding: 0 40px;
+}
+.sliding-banner .button {
+  --clamped-font-size: clamp(0.5rem,0.1667rem + 1.6667vw,1.5rem);
+  --clumped-width: clamp(6.5625rem,3.2292rem + 16.6667vw,16.5625rem);
+  --clamped-height: clamp(1.25rem,0.4167rem + 4.1667vw,3.75rem);
+  font-size: var(--clamped-font-size);
+  height: var(--clamped-height);
+  align-self: flex-start;
+  border-radius: 9999px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(43 43 43/var(--tw-bg-opacity));
+  text-align: center;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255/var(--tw-text-opacity));
+}
+.sliding-banner .progress {
+  width: 100%;
+  position: relative;
+}
+.sliding-banner .progress .progress-active, .sliding-banner .progress .progress-inactive {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  border-radius: 4px;
+}
+.sliding-banner .progress .progress-inactive {
+  background: rgb(200, 200, 200);
+}
+.sliding-banner .progress .progress-active {
+  background: rgb(0, 0, 0);
+  width: 0%;
+}
+.sliding-banner .slider-text-container {
+  position: relative;
+  height: 100%;
+  align-items: flex-end;
+}
+.sliding-banner .slider-text-container .slider-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+}
+.sliding-banner .registrate {
+  display: flex;
+  justify-content: space-between;
+}
+.sliding-banner .registrate h2 {
+  font-size: clamp(1.125rem, 0.7917rem + 1.6667vw, 2.125rem);
+  line-height: clamp(2.1875rem, 1.1875rem + 5vw, 5.1875rem);
+  text-align: left;
+  font-weight: 500;
+}
+.sliding-banner .registrate p {
+  font-size: clamp(0.75rem, 0.5rem + 1.25vw, 1.5rem);
+  line-height: clamp(1.125rem, 1rem + 0.625vw, 1.5rem);
+  width: auto;
+  text-align: left;
+  font-weight: 300;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -1,5 +1,9 @@
 gsap.registerPlugin(ScrollTrigger)
 
+ScrollTrigger.defaults({
+    ease: 'none'
+})
+
 const lenis = new Lenis()
 
 lenis.on('scroll', (e) => {
@@ -27,7 +31,7 @@ const urls = [
     'https://homepage-fawn-two.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fstep-7.a21544b4.jpg&w=1920&q=75'
 ]
 
-const itemNumbers = gsap.utils.toArray('.number'),
+const itemNumbers = gsap.utils.toArray('.inner-panel .number'),
 itemAmount = itemNumbers.length,
 texts = gsap.utils.toArray('.text-container');
 let getRatio = el => window.innerHeight / (window.innerHeight + el.offsetHeight);
@@ -62,7 +66,7 @@ gsap.utils.toArray(".panel-container section").forEach((section, i) => {
           scrub: 0.5,
           start: 'top top',
           end: 'bottom bottom',
-          // markers: true,
+        //   markers: true,
           pin: '.inner-panel',
           ease: 'none',
           snap: {
@@ -95,6 +99,56 @@ stl.to('.progress-bar-active', {
     height: '100%',
     ease: 'none'
 }, "<")
+
+
+
+// sliding banner section
+
+const slidingBannerNumbers = gsap.utils.toArray('.sliding-banner .step-header__number'),
+slidingBannerNumbersLength = slidingBannerNumbers.length,
+slidingBannerText = gsap.utils.toArray('.sliding-banner .slider-text');
+
+const btl = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.sliding-banner',
+        scrub: 0.5,
+        start: 'top top',
+        end: '+=3500',
+      //   markers: true,
+        pin: true,
+        ease: 'none',
+        snap: {
+            snapTo: 1 / (slidingBannerNumbersLength - 1),
+            duration: 0.5,
+        },
+        invalidateOnRefresh: true, // to make it responsive
+        onUpdate: (self) => {
+            const activeIndex = Math.round(self.progress * (slidingBannerNumbersLength - 1));
+      
+            slidingBannerNumbers.forEach((number, index) => {
+                if (index === activeIndex) {
+                    gsap.to(number, { fontWeight: 'bold', duration: 0.2 });
+                    gsap.to(slidingBannerText[index], { opacity: 1, duration: 0.2 });
+                } else {
+                    gsap.to(number, { fontWeight: 'normal', duration: 0.2 });
+                    gsap.to(slidingBannerText[index], { opacity: 0, duration: 0.2 });
+
+                }
+            });
+        },
+    }
+})
+
+btl.to('.progress-active', {
+    width: '100%',
+    ease: 'none'
+})
+btl.to('.button--1', {
+    padding: '0 120px'
+},"<")
+
+
+
 
 
 
